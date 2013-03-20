@@ -1,0 +1,1 @@
+<?// MODEL CHOICE	include 'connect.php';	function get_prof()	{		$q1=mysql_query("SELECT * FROM `professors1`");		while($row=mysql_fetch_array($q1))		{			if($row['type']==1)			{				$array['lec'][] = $row;			}			elseif($row['type']==2)			{				$array['pr'][] = $row;			}		}		return $array;	}?>
