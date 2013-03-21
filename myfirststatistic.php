@@ -1,0 +1,1 @@
+<?// STATISTIC CONTROLLER	require_once ("model/statistic.php");	$professors = get_prof();	include 'view/header.php';	if(isset($_POST['prof']))	{		list ($fio,$data) = lol(+$_POST['prof']);		include("view/statistic.php");	}	else	{		include("view/statistic_login.php");	}	include 'view/footer.php'?>

@@ -1,6 +1,8 @@
 <?
 	echo "<form action=../model/handling.php method=post>";
-	echo '<input type=hidden name="code" value="'.$usercode.'">';
+	// echo '<input type=hidden name="code" value="'.$usercode.'">';
+	echo '<input type=hidden name="l" value="'.$lector.'">';
+	echo '<input type=hidden name="p" value="'.$practik.'">';
 	// Первый вопрос
 	echo "<div class=question>";
 	echo "<span class='quest-text'>1. Для каждого утверждения поставьте оценку от 1 до 4, либо н/о, если затрудняетесь с ответом.</span>";
@@ -17,7 +19,7 @@
 			$style = '';
 		echo "<tr ".$style.">";	
 		echo "<td>".	$quest['text']."</td>";
-		echo "<td><select name='".$quest['id']."_t'>";
+		echo "<td><select name='".$quest['id']."_l'>";
 		foreach($questions[0]['ans'] as $ans)
 		{
 			echo "<option value='".$ans['id']."'>".$ans['ans_text']."</option>"; 
@@ -68,14 +70,14 @@
 			echo "<td>Учитель Теории</td>";
 			foreach($questions[4]['ans'] as $ans)
 			{
-				echo "<td><input value='".$ans['id']."' type=radio name='".$quest['id']."_t'></input></td>"; 
+				echo "<td><input value='".$ans['id']."' type=radio name='".$quest['id']."_l' checked></input></td>"; 
 			}
 			echo "</tr>";
 			echo "<tr>";
 			echo "<td>Учитель Практики</td>";
 			foreach($questions[4]['ans'] as $ans)
 			{
-				echo "<td><input value='".$ans['id']."' type=radio name='".$quest['id']."_p'></input></td>";
+				echo "<td><input value='".$ans['id']."' type=radio name='".$quest['id']."_p' checked></input></td>";
 			}
 			echo "</tr>";
 			echo "</table>";
@@ -88,16 +90,37 @@
 		echo "</div>";
 		echo "<br>";
 	//7 вопрос
+		// echo "<div class='question'>";
+			// radio_vopros($questions,6);
+		// echo "</div>";
+		// echo "<br>";
+		
+		
+	// вопрос про сдачу
 		echo "<div class='question'>";
-			radio_vopros($questions,6);
+		echo "<span class='quest-text'>";
+		echo "7. Какую оценку вы получили за экзамене?</span>";
+		echo "<label class=radio>";
+		echo "<input value='1' type=radio name='mark'> 5 </input><br>"; 
+		echo "</label>";
+		echo "<label class=radio>";
+		echo "<input value='1' type=radio name='mark'> 4 </input><br>"; 
+		echo "</label>";
+		echo "<label class=radio>";
+		echo "<input value='1' type=radio name='mark'> 3 </input><br>"; 
+		echo "</label>";
+		echo "<label class=radio>";
+		echo "<input value='0' type=radio name='mark' checked> Не сдал/не допущен</input><br>"; 
+		echo "</label>";
 		echo "</div>";
 		echo "<br>";
+	// ===================== надо переписать, время 2:04, а мне утром на работу, пиздец (тяп ляп и в продакшн)
 	//8 вопрос
 		echo "<div class='question'>";
 			foreach($questions[7]['quest'] as $quest)
 			{
-				echo "<span name='".$quest['id']."' class='quest-text'>8.".$quest['text']."</span><br>";
-				echo "<textarea></textarea>";
+				echo "<span class='quest-text'>8.".$quest['text']."</span><br>";
+				echo "<textarea name='".$quest['id']."'></textarea>";
 			}
 		echo "</div>";
 		echo "<br>";

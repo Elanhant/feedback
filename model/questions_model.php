@@ -26,15 +26,25 @@
 	
 	function radio_vopros($questions,$i)
 	{
+		
+	
 		foreach($questions[$i]['quest'] as $quest)
 		{
+			
 			echo "<span class='quest-text'>";
 			echo $i+1;
 			echo ".".$quest['text']."</span>";
 			foreach($questions[$i]['ans'] as $ans)
 			{
+				$whom = 0+$quest['whom'];
+				if($whom==1)
+					$whom='_l';
+				elseif($whom==2)
+					$whom='_p';
+				else
+					$whom='';
 				echo "<label class=radio>";
-				echo "<input value='".$ans['id']."_".$quest['whom']."' type=radio name='".$ans['num_ques']."'>   ".$ans['ans_text']."</input><br>"; 
+				echo "<input value='".$ans['id']."' type=radio name='".$quest['id'].$whom."' checked>   ".$ans['ans_text']."</input><br>"; 
 				echo "</label>";
 			}
 		}

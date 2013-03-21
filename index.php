@@ -1,5 +1,5 @@
-
 <?php
+header("Location: choice.php");
 include 'header.php';
 include 'connect.php';
 
