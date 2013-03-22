@@ -101,7 +101,7 @@
 		echo "<span class='quest-text'>";
 		echo "7. Какую оценку вы получили за экзамене?</span>";
 		echo "<label class=radio>";
-		echo "<input value='1' type=radio name='mark'> 5 </input><br>"; 
+		echo "<input value='1' type=radio name='mark' checked> 5 </input><br>"; 
 		echo "</label>";
 		echo "<label class=radio>";
 		echo "<input value='1' type=radio name='mark'> 4 </input><br>"; 
@@ -110,7 +110,7 @@
 		echo "<input value='1' type=radio name='mark'> 3 </input><br>"; 
 		echo "</label>";
 		echo "<label class=radio>";
-		echo "<input value='0' type=radio name='mark' checked> Не сдал/не допущен</input><br>"; 
+		echo "<input value='0' type=radio name='mark'> Не сдал/не допущен</input><br>"; 
 		echo "</label>";
 		echo "</div>";
 		echo "<br>";
@@ -120,8 +120,17 @@
 			foreach($questions[7]['quest'] as $quest)
 			{
 				echo "<span class='quest-text'>8.".$quest['text']."</span><br>";
-				echo "<textarea name='".$quest['id']."'></textarea>";
+				// echo "<textarea name='".$quest['id']."'></textarea>";
+				echo "<div style='float:left;padding-right:20px;'>";
+				echo "<p>Лектор</p>";
+				echo "<textarea name='com_l'></textarea>";
+				echo "</div >";
+				echo "<div style='display: inline-block;'>";
+				echo "<p>Практик</p>";
+				echo "<textarea name='com_p'></textarea>"; 
+				echo "</div>";
 			}
+			
 		echo "</div>";
 		echo "<br>";
 		echo "<input type=submit>";

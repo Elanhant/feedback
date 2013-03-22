@@ -76,3 +76,18 @@ textarea{
 	padding-left:80px;
 }
 
+.statictic_table
+{
+	border: solid 1px;
+	width: 200px;
+	height: 250px;
+	display: inline-table;
+	margin-left:5px;
+	position:relative;
+}
+.stat
+{
+	border-top:solid 1px;
+	/*bottom: 0;*/
+	/*position: absolute;*/
+}
