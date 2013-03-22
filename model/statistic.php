@@ -27,7 +27,7 @@ include 'connect.php';
 		{
 			$all = 0;
 			$neo = 0;
-			$i=1;$j=1; //счётчики
+			$i=1;$j=1; //СЃС‡С‘С‚С‡РёРєРё
 			while($row=mysql_fetch_array($q))
 			{
 				
@@ -67,12 +67,12 @@ include 'connect.php';
 		{
 			if($num == $row['number'])
 			{
-				//мне лень переписывать это :D мало ли пригодиться
+				//РјРЅРµ Р»РµРЅСЊ РїРµСЂРµРїРёСЃС‹РІР°С‚СЊ СЌС‚Рѕ :D РјР°Р»Рѕ Р»Рё РїСЂРёРіРѕРґРёС‚СЊСЃСЏ
 			}
 			else
 			{
 				$num = $row['number'];
-				$vop[] = $num; // номера вопросов
+				$vop[] = $num; // РЅРѕРјРµСЂР° РІРѕРїСЂРѕСЃРѕРІ
 				$variants[$num] = get_all_ans($num);
 				$quest[$num] = $row['text'];
 				foreach($variants[$num] as $v)
