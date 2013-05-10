@@ -1,85 +1,121 @@
 <?php
-header("Location: warning.php");
-include 'header.php';
-include 'connect.php';
 
-if (!isset($_GET['code'])){
-	echo "
-		<form action='index.php' method='get' class='form-inline' id='loginform'>
-		<input id='login' type=text name='code' placeholder='put your code here'/>
-		<input class='btn' type=submit value='Войти'/> 
-		</form>
-	";
-}else{
-	$usercode=htmlspecialchars($_GET['code'], ENT_QUOTES);
-	$q=mysql_query("SELECT * FROM `codes` WHERE code='".$usercode."'");
-	$result=mysql_fetch_row($q);
-	if (!isset($result[0])){
-		//error!!!
-		echo 'there is no code '.$usercode.'! Bad, bad hacker!<br/>';
-		echo '<a href="index.php">Go back</a>';
-	}else{
-		$lect_id = $result[2];
-		$pract_id = $result[3];
-		$q=mysql_query("SELECT * FROM `professors` WHERE id='".$lect_id." limit 0,1'");
-		$info=mysql_fetch_row($q);
-		$lect_name=$info[1];
-		$discipline=$info[2];
-		if ($lect_id==$pract_id){
-			$pract_name=$lect_name;
-		}else{
-			$q=mysql_query("SELECT * FROM `professors` WHERE id='".$pract_id."'");
-			$info=mysql_fetch_row($q);
-			$pract_name=$info[1];
-		}
-		echo "<b>Предмет: ".$discipline."</b><br /><br />";
-		echo '<form action="work.php" method=post class="form-horizontal">';
-		echo '<input type=hidden name="code" value="'.$usercode.'">';
-		
-		function qwe($q,$for){
-			while($row=mysql_fetch_array($q)){
-				if ($row["type"]!=0){
-					$qwe=mysql_query("SELECT * FROM answer_names WHERE id_of_question='".$row['id']."'");
-				}
-				echo "<div class='question'>";
-				switch ($row["type"]){
-					case 0:
-						echo $row['question']."<br /> <textarea rows='3' name='".$for.$row['id']."'></textarea> <br />";
-						break 1;
-					case 1:
-						echo $row['question']."<br>";
-						while ($names = mysql_fetch_array($qwe)){
-							echo '<label class="radio">';
-							echo "<input type=radio name='".$for.$row['id']."' value=".$names['id'].">".$names['answer']."<br />";
-							echo '</label>';
-						}
-						break 1;
-					case 2:
-						echo $row['question']."<br>";
-						echo "<select name='".$for.$row['id']."'>";
-						while ($names = mysql_fetch_array($qwe)){
-							echo "<option value=".$names['id'].">".$names['answer']."</option>";
-						}
-						echo "</select><br>";
-						break 1;
-				}
-				echo "</div>";
-			}
-		}
-		echo "<b>Теория<br />";
-		echo "Преподаватель: ".$lect_name."</b><br />";
-		$q=mysql_query("SELECT * FROM `questions` WHERE owner=0 and (q_to=0 or q_to=2)");
-		qwe($q,"lect_");
-		
-		echo "<b>Практика<br />";
-		echo "Преподаватель: ".$pract_name."</b><br />";
-		$q=mysql_query("SELECT * FROM `questions` WHERE owner=0 and (q_to=1 or q_to=2)");
-		qwe($q,"pract_");
-		
-		
-		echo '<input type=submit value="Готово"></form>';
-	}
+/**
+ * The directory in which your application specific resources are located.
+ * The application directory must contain the bootstrap.php file.
+ *
+ * @link http://kohanaframework.org/guide/about.install#application
+ */
+$application = 'application';
+
+/**
+ * The directory in which your modules are located.
+ *
+ * @link http://kohanaframework.org/guide/about.install#modules
+ */
+$modules = 'modules';
+
+/**
+ * The directory in which the Kohana resources are located. The system
+ * directory must contain the classes/kohana.php file.
+ *
+ * @link http://kohanaframework.org/guide/about.install#system
+ */
+$system = 'system';
+
+/**
+ * The default extension of resource files. If you change this, all resources
+ * must be renamed to use the new extension.
+ *
+ * @link http://kohanaframework.org/guide/about.install#ext
+ */
+define('EXT', '.php');
+
+/**
+ * Set the PHP error reporting level. If you set this in php.ini, you remove this.
+ * @link http://www.php.net/manual/errorfunc.configuration#ini.error-reporting
+ *
+ * When developing your application, it is highly recommended to enable notices
+ * and strict warnings. Enable them by using: E_ALL | E_STRICT
+ *
+ * In a production environment, it is safe to ignore notices and strict warnings.
+ * Disable them by using: E_ALL ^ E_NOTICE
+ *
+ * When using a legacy application with PHP >= 5.3, it is recommended to disable
+ * deprecated notices. Disable with: E_ALL & ~E_DEPRECATED
+ */
+error_reporting(E_ALL | E_STRICT);
+
+/**
+ * End of standard configuration! Changing any of the code below should only be
+ * attempted by those with a working knowledge of Kohana internals.
+ *
+ * @link http://kohanaframework.org/guide/using.configuration
+ */
+
+// Set the full path to the docroot
+define('DOCROOT', realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR);
+
+// Make the application relative to the docroot, for symlink'd index.php
+if ( ! is_dir($application) AND is_dir(DOCROOT.$application))
+	$application = DOCROOT.$application;
+
+// Make the modules relative to the docroot, for symlink'd index.php
+if ( ! is_dir($modules) AND is_dir(DOCROOT.$modules))
+	$modules = DOCROOT.$modules;
+
+// Make the system relative to the docroot, for symlink'd index.php
+if ( ! is_dir($system) AND is_dir(DOCROOT.$system))
+	$system = DOCROOT.$system;
+
+// Define the absolute paths for configured directories
+define('APPPATH', realpath($application).DIRECTORY_SEPARATOR);
+define('MODPATH', realpath($modules).DIRECTORY_SEPARATOR);
+define('SYSPATH', realpath($system).DIRECTORY_SEPARATOR);
+
+// Clean up the configuration vars
+unset($application, $modules, $system);
+
+if (file_exists('install'.EXT))
+{
+	// Load the installation check
+	return include 'install'.EXT;
 }
 
-include 'footer.php';
-?>
+/**
+ * Define the start time of the application, used for profiling.
+ */
+if ( ! defined('KOHANA_START_TIME'))
+{
+	define('KOHANA_START_TIME', microtime(TRUE));
+}
+
+/**
+ * Define the memory usage at the start of the application, used for profiling.
+ */
+if ( ! defined('KOHANA_START_MEMORY'))
+{
+	define('KOHANA_START_MEMORY', memory_get_usage());
+}
+
+// Bootstrap the application
+require APPPATH.'bootstrap'.EXT;
+
+if (PHP_SAPI == 'cli') // Try and load minion
+{
+	class_exists('Minion_Task') OR die('Please enable the Minion module for CLI support.');
+	set_exception_handler(array('Minion_Exception', 'handler'));
+
+	Minion_Task::factory(Minion_CLI::options())->execute();
+}
+else
+{
+	/**
+	 * Execute the main request. A source of the URI can be passed, eg: $_SERVER['PATH_INFO'].
+	 * If no source is specified, the URI will be automatically detected.
+	 */
+	echo Request::factory(TRUE, array(), FALSE)
+		->execute()
+		->send_headers(TRUE)
+		->body();
+}

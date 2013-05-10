@@ -1,0 +1,726 @@
+<?php defined('SYSPATH') OR die('No direct script access.'); ?>
+
+2013-05-10 14:11:31 --- CRITICAL: ErrorException [ 2 ]: mysql_fetch_array() expects parameter 1 to be resource, boolean given ~ APPPATH\classes\Controller\statistic.php [ 35 ] in :
+2013-05-10 14:11:31 --- DEBUG: #0 [internal function]: Kohana_Core::error_handler(2, 'mysql_fetch_arr...', 'Z:\home\test2.r...', 35, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(35): mysql_fetch_array(false)
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(7): Controller_Statistic->get_prof()
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in :
+2013-05-10 14:12:25 --- CRITICAL: ErrorException [ 2 ]: include(view/statistic_login.php) [function.include]: failed to open stream: No such file or directory ~ APPPATH\classes\Controller\statistic.php [ 27 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:27
+2013-05-10 14:12:25 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Kohana_Core::error_handler(2, 'include(view/st...', 'Z:\home\test2.r...', 27, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic::action_index()
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:27
+2013-05-10 14:14:28 --- CRITICAL: ErrorException [ 4 ]: syntax error, unexpected T_STRING ~ APPPATH\classes\Controller\statistic.php [ 92 ] in :
+2013-05-10 14:14:28 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in :
+2013-05-10 14:14:42 --- CRITICAL: ErrorException [ 4 ]: syntax error, unexpected T_STRING ~ APPPATH\classes\Controller\statistic.php [ 92 ] in :
+2013-05-10 14:14:42 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in :
+2013-05-10 14:51:44 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`st_prof` = `id`) WHERE `id` = 1) CROSS JOIN `questions1` ON (`st_num_quest` = `id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 14:51:44 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 14:55:10 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`st_prof` = `id`) WHERE `id` = 1) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 14:55:10 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 14:55:11 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`st_prof` = `id`) WHERE `id` = 1) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 14:55:11 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:18:45 --- CRITICAL: Database_Exception [ 1054 ]: Unknown column 'statistic.st_prof' in 'on clause' [ SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistic`.`st_prof` = `professors1`.`id`) WHERE `id` = 1 ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:18:45 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `st_num_...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:18:48 --- CRITICAL: Database_Exception [ 1054 ]: Unknown column 'statistic.st_prof' in 'on clause' [ SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistic`.`st_prof` = `professors1`.`id`) WHERE `id` = 1 ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:18:48 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `st_num_...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:43:29 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `professors1`.`id` = 1) CROSS JOIN `questions1` ON (`SELECT ``st_num_quest``, ``st_ans``, ``fio``, ``mark`` FROM ``statistics`` CROSS JOIN ``professors1`` ON (``statistics```.```st_prof`` = ``professors1```.```id``) WHERE ``professors1```.```id`` = 1st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:43:29 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(98): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:01 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `professors1`.`id` = 1) CROSS JOIN `questions1` ON (`SELECT ``st_num_quest``, ``st_ans``, ``fio``, ``mark`` FROM ``statistics`` CROSS JOIN ``professors1`` ON (``statistics```.```st_prof`` = ``professors1```.```id``) WHERE ``professors1```.```id`` = 1`.`st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:01 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(98): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:04 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `professors1`.`id` = 1) CROSS JOIN `questions1` ON (`SELECT ``st_num_quest``, ``st_ans``, ``fio``, ``mark`` FROM ``statistics`` CROSS JOIN ``professors1`` ON (``statistics```.```st_prof`` = ``professors1```.```id``) WHERE ``professors1```.```id`` = 1`.`st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:04 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(98): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:05 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `professors1`.`id` = 1) CROSS JOIN `questions1` ON (`SELECT ``st_num_quest``, ``st_ans``, ``fio``, ``mark`` FROM ``statistics`` CROSS JOIN ``professors1`` ON (``statistics```.```st_prof`` = ``professors1```.```id``) WHERE ``professors1```.```id`` = 1`.`st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:05 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(98): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:06 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `professors1`.`id` = 1) CROSS JOIN `questions1` ON (`SELECT ``st_num_quest``, ``st_ans``, ``fio``, ``mark`` FROM ``statistics`` CROSS JOIN ``professors1`` ON (``statistics```.```st_prof`` = ``professors1```.```id``) WHERE ``professors1```.```id`` = 1`.`st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:06 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(98): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:06 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `professors1`.`id` = 1) CROSS JOIN `questions1` ON (`SELECT ``st_num_quest``, ``st_ans``, ``fio``, ``mark`` FROM ``statistics`` CROSS JOIN ``professors1`` ON (``statistics```.```st_prof`` = ``professors1```.```id``) WHERE ``professors1```.```id`` = 1`.`st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:06 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(98): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:06 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `professors1`.`id` = 1) CROSS JOIN `questions1` ON (`SELECT ``st_num_quest``, ``st_ans``, ``fio``, ``mark`` FROM ``statistics`` CROSS JOIN ``professors1`` ON (``statistics```.```st_prof`` = ``professors1```.```id``) WHERE ``professors1```.```id`` = 1`.`st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:06 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(98): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:07 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `professors1`.`id` = 1) CROSS JOIN `questions1` ON (`SELECT ``st_num_quest``, ``st_ans``, ``fio``, ``mark`` FROM ``statistics`` CROSS JOIN ``professors1`` ON (``statistics```.```st_prof`` = ``professors1```.```id``) WHERE ``professors1```.```id`` = 1`.`st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:07 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(98): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:07 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `professors1`.`id` = 1) CROSS JOIN `questions1` ON (`SELECT ``st_num_quest``, ``st_ans``, ``fio``, ``mark`` FROM ``statistics`` CROSS JOIN ``professors1`` ON (``statistics```.```st_prof`` = ``professors1```.```id``) WHERE ``professors1```.```id`` = 1`.`st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:44:07 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(98): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:47:05 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `professors1`.`id` = 1) CROSS JOIN `questions1` ON (`SELECT ``st_num_quest``, ``st_ans``, ``fio``, ``mark`` FROM ``statistics`` CROSS JOIN ``professors1`` ON (``statistics```.```st_prof`` = ``professors1```.```id``) WHERE ``professors1```.```id`` = 1st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:47:05 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(98): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:47:16 --- CRITICAL: Database_Exception [ 1248 ]: Every derived table must have its own alias [ SELECT * FROM (SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `professors1`.`id` = 1) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:47:16 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT * FROM (...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(98): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:55:27 --- CRITICAL: Database_Exception [ 1052 ]: Column 'id' in on clause is ambiguous [ SELECT `st_num_quest`, `st_ans`, `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`id` = `st_ans`) WHERE `professors1`.`id` = 1 ORDER BY `number` ASC ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:55:27 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `st_num_...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:58:03 --- CRITICAL: Database_Exception [ 1052 ]: Column 'id' in field list is ambiguous [ SELECT `fio`, `number`, `text`, `id`, `ans_text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`id` = `st_ans`) WHERE `professors1`.`id` = 1 ORDER BY `number` ASC ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 15:58:03 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 16:20:03 --- CRITICAL: Database_Exception [ 1052 ]: Column 'id' in field list is ambiguous [ SELECT `fio`, `number`, `text`, `id`, `ans_text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) WHERE `professors1`.`id` = 1 ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 16:20:03 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 16:20:22 --- CRITICAL: Database_Exception [ 1054 ]: Unknown column 'ans_text' in 'field list' [ SELECT `fio`, `number`, `text`, `ans_text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) WHERE `professors1`.`id` = 1 ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 16:20:22 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 16:20:32 --- CRITICAL: Database_Exception [ 1054 ]: Unknown column 'price' in 'field list' [ SELECT `fio`, `number`, `text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) WHERE `professors1`.`id` = 1 ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 16:20:32 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 16:20:44 --- CRITICAL: ErrorException [ 4 ]: syntax error, unexpected ',' ~ APPPATH\classes\Controller\statistic.php [ 89 ] in :
+2013-05-10 16:20:44 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in :
+2013-05-10 16:21:59 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: q ~ APPPATH\classes\Controller\statistic.php [ 126 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:126
+2013-05-10 16:21:59 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(126): Kohana_Core::error_handler(8, 'Undefined varia...', 'Z:\home\test2.r...', 126, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:126
+2013-05-10 16:22:04 --- CRITICAL: ErrorException [ 1 ]: Call to undefined function get_all_ans() ~ APPPATH\classes\Controller\statistic.php [ 133 ] in :
+2013-05-10 16:22:04 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in :
+2013-05-10 16:22:19 --- CRITICAL: ErrorException [ 8 ]: Undefined index: ans_text ~ APPPATH\classes\Controller\statistic.php [ 141 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:141
+2013-05-10 16:22:19 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(141): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 141, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:141
+2013-05-10 16:22:38 --- CRITICAL: Database_Exception [ 1052 ]: Column 'id' in on clause is ambiguous [ SELECT `fio`, `number`, `text`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`id` = `st_ans`) WHERE `professors1`.`id` = 1 ORDER BY `number` ASC ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 16:22:38 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 16:23:07 --- CRITICAL: ErrorException [ 8 ]: Undefined index: ans_text ~ APPPATH\classes\Controller\statistic.php [ 141 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:141
+2013-05-10 16:23:07 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(141): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 141, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:141
+2013-05-10 16:23:19 --- CRITICAL: Database_Exception [ 1052 ]: Column 'id' in field list is ambiguous [ SELECT `fio`, `number`, `text`, `id`, `ans_text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`answers1`.`id` = `st_ans`) WHERE `professors1`.`id` = 1 ORDER BY `number` ASC ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 16:23:19 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(99): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(27): Controller_Statistic->other_q(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 16:59:00 --- CRITICAL: ErrorException [ 4 ]: syntax error, unexpected T_FOREACH ~ APPPATH\classes\Controller\statistic.php [ 98 ] in :
+2013-05-10 16:59:00 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in :
+2013-05-10 16:59:52 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: professors ~ APPPATH\views\statistic_login.php [ 9 ] in Z:\home\test2.ru\www\application\views\statistic_login.php:9
+2013-05-10 16:59:52 --- DEBUG: #0 Z:\home\test2.ru\www\application\views\statistic_login.php(9): Kohana_Core::error_handler(8, 'Undefined varia...', 'Z:\home\test2.r...', 9, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\View.php(61): include('Z:\home\test2.r...')
+#2 Z:\home\test2.ru\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\test2.r...', Array)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\View.php(228): Kohana_View->render()
+#4 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(22): Kohana_View->__toString()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#6 [internal function]: Kohana_Controller->execute()
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#8 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#9 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#10 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#11 {main} in Z:\home\test2.ru\www\application\views\statistic_login.php:9
+2013-05-10 17:01:08 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: content ~ APPPATH\views\template.php [ 3 ] in Z:\home\test2.ru\www\application\views\template.php:3
+2013-05-10 17:01:08 --- DEBUG: #0 Z:\home\test2.ru\www\application\views\template.php(3): Kohana_Core::error_handler(8, 'Undefined varia...', 'Z:\home\test2.r...', 3, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\View.php(61): include('Z:\home\test2.r...')
+#2 Z:\home\test2.ru\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\test2.r...', Array)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(87): Kohana_Controller_Template->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#9 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#10 {main} in Z:\home\test2.ru\www\application\views\template.php:3
+2013-05-10 17:02:58 --- CRITICAL: ErrorException [ 8 ]: Use of undefined constant id - assumed 'id' ~ APPPATH\classes\Controller\statistic.php [ 57 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:57
+2013-05-10 17:02:58 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(57): Kohana_Core::error_handler(8, 'Use of undefine...', 'Z:\home\test2.r...', 57, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(6)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:57
+2013-05-10 17:03:52 --- CRITICAL: Database_Exception [ 1146 ]: Table 'feedback.statistic' doesn't exist [ SELECT `fio`, `number`, `text`, `id`, `ans_text`, `price`, `mark` FROM `statistic` CROSS JOIN `professors1` ON (`statistic`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`answers1`.`id` = `st_ans`) WHERE `id` = 6 AND `number` = '1' ORDER BY `number` ASC, `id` ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:03:52 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(60): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(6)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:04:13 --- CRITICAL: Database_Exception [ 1052 ]: Column 'id' in field list is ambiguous [ SELECT `fio`, `number`, `text`, `id`, `ans_text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistic`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`answers1`.`id` = `st_ans`) WHERE `id` = 6 AND `number` = '1' ORDER BY `number` ASC, `id` ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:04:13 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(60): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(6)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:05:27 --- CRITICAL: Database_Exception [ 1052 ]: Column 'id' in field list is ambiguous [ SELECT `fio`, `number`, `text`, `id`, `ans_text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistic`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`answers1`.`id` = `st_ans`) WHERE `professors1`.`id` = 6 AND `number` = '1' ORDER BY `number` ASC, `professors1`.`id` ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:05:27 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(60): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(6)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:05:32 --- CRITICAL: Database_Exception [ 1052 ]: Column 'id' in field list is ambiguous [ SELECT `fio`, `number`, `text`, `id`, `ans_text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistic`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`answers1`.`id` = `st_ans`) WHERE `professors1`.`id` = 6 AND `number` = '1' ORDER BY `number` ASC, `professors1`.`id` ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:05:32 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(60): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(6)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:05:51 --- CRITICAL: Database_Exception [ 1054 ]: Unknown column 'statistic.st_prof' in 'on clause' [ SELECT `fio`, `number`, `text`, `professors1`.`id`, `ans_text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistic`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`answers1`.`id` = `st_ans`) WHERE `professors1`.`id` = 6 AND `number` = '1' ORDER BY `number` ASC, `professors1`.`id` ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:05:51 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(60): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(6)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:06:03 --- CRITICAL: ErrorException [ 8 ]: Undefined offset: 1 ~ APPPATH\classes\Controller\statistic.php [ 14 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:14
+2013-05-10 17:06:03 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Kohana_Core::error_handler(8, 'Undefined offse...', 'Z:\home\test2.r...', 14, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#2 [internal function]: Kohana_Controller->execute()
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#6 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#7 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:14
+2013-05-10 17:09:26 --- CRITICAL: Database_Exception [ 1054 ]: Unknown column 'questions1.id' in 'where clause' [ SELECT `fio`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) WHERE `questions1`.`id` = 6 ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:09:26 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(60): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(6)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:10:33 --- CRITICAL: ErrorException [ 8 ]: Use of undefined constant id - assumed 'id' ~ APPPATH\classes\Controller\statistic.php [ 78 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:78
+2013-05-10 17:10:33 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(78): Kohana_Core::error_handler(8, 'Use of undefine...', 'Z:\home\test2.r...', 78, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:78
+2013-05-10 17:11:09 --- CRITICAL: ErrorException [ 8 ]: Undefined index: all ~ APPPATH\classes\Controller\statistic.php [ 80 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:80
+2013-05-10 17:11:09 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(80): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 80, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:80
+2013-05-10 17:11:59 --- CRITICAL: ErrorException [ 8 ]: Undefined index: neo ~ APPPATH\classes\Controller\statistic.php [ 83 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:83
+2013-05-10 17:11:59 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(83): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 83, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:83
+2013-05-10 17:20:03 --- CRITICAL: ErrorException [ 8 ]: Undefined index: all ~ APPPATH\classes\Controller\statistic.php [ 81 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:81
+2013-05-10 17:20:03 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(81): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 81, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:81
+2013-05-10 17:20:29 --- CRITICAL: ErrorException [ 8 ]: Undefined index: all ~ APPPATH\classes\Controller\statistic.php [ 81 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:81
+2013-05-10 17:20:29 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(81): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 81, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:81
+2013-05-10 17:20:32 --- CRITICAL: ErrorException [ 8 ]: Undefined index: all ~ APPPATH\classes\Controller\statistic.php [ 81 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:81
+2013-05-10 17:20:32 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(81): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 81, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:81
+2013-05-10 17:20:39 --- CRITICAL: Database_Exception [ 1064 ]: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1' ORDER BY `number` ASC, `questions1`.`id`' at line 1 [ SELECT `fio`, `number`, `text`, `questions1`.`id`, `ans_text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`answers1`.`id` = `st_ans`) WHERE `professors1`.`id` = 1 AND `number` () '1' ORDER BY `number` ASC, `questions1`.`id` ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:20:39 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(60): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:21:01 --- CRITICAL: ErrorException [ 8 ]: Undefined index: all ~ APPPATH\classes\Controller\statistic.php [ 81 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:81
+2013-05-10 17:21:01 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(81): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 81, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:81
+2013-05-10 17:21:10 --- CRITICAL: Database_Exception [ 1064 ]: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'A '1' ORDER BY `number` ASC, `questions1`.`id`' at line 1 [ SELECT `fio`, `number`, `text`, `questions1`.`id`, `ans_text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`answers1`.`id` = `st_ans`) WHERE `professors1`.`id` = 1 AND `number` A '1' ORDER BY `number` ASC, `questions1`.`id` ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:21:10 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(60): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:36:02 --- CRITICAL: Database_Exception [ 1064 ]: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'A '1' ORDER BY `number` ASC, `questions1`.`id`' at line 1 [ SELECT `fio`, `number`, `text`, `questions1`.`id`, `ans_text`, `price`, `mark` FROM `statistics` CROSS JOIN `professors1` ON (`statistics`.`st_prof` = `professors1`.`id`) CROSS JOIN `questions1` ON (`st_num_quest` = `questions1`.`id`) CROSS JOIN `answers1` ON (`answers1`.`id` = `st_ans`) WHERE `professors1`.`id` = 1 AND `number` A '1' ORDER BY `number` ASC, `questions1`.`id` ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:36:02 --- DEBUG: #0 Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `fio`, `...', false, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(60): Kohana_Database_Query->execute()
+#2 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#8 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#9 {main} in Z:\home\test2.ru\www\modules\database\classes\Kohana\Database\Query.php:251
+2013-05-10 17:36:08 --- CRITICAL: ErrorException [ 8 ]: Undefined index: all ~ APPPATH\classes\Controller\statistic.php [ 84 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:84
+2013-05-10 17:36:08 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(84): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 84, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:84
+2013-05-10 17:36:19 --- CRITICAL: ErrorException [ 8 ]: Undefined index: neo ~ APPPATH\classes\Controller\statistic.php [ 87 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:87
+2013-05-10 17:36:19 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(87): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 87, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:87
+2013-05-10 17:36:46 --- CRITICAL: ErrorException [ 8 ]: Undefined index: neo ~ APPPATH\classes\Controller\statistic.php [ 88 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:88
+2013-05-10 17:36:46 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(88): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 88, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(14): Controller_Statistic->first(1)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:88
+2013-05-10 17:57:10 --- CRITICAL: ErrorException [ 8 ]: Undefined offset: 1 ~ APPPATH\classes\Controller\statistic.php [ 12 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:12
+2013-05-10 17:57:10 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(12): Kohana_Core::error_handler(8, 'Undefined offse...', 'Z:\home\test2.r...', 12, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#2 [internal function]: Kohana_Controller->execute()
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#6 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#7 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:12
+2013-05-10 17:58:18 --- CRITICAL: ErrorException [ 8 ]: Undefined offset: 1 ~ APPPATH\classes\Controller\statistic.php [ 12 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:12
+2013-05-10 17:58:18 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(12): Kohana_Core::error_handler(8, 'Undefined offse...', 'Z:\home\test2.r...', 12, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#2 [internal function]: Kohana_Controller->execute()
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#6 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#7 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:12
+2013-05-10 17:58:24 --- CRITICAL: ErrorException [ 8 ]: Undefined index: neo ~ APPPATH\classes\Controller\statistic.php [ 81 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:81
+2013-05-10 17:58:24 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(81): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 81, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(12): Controller_Statistic->first(4)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:81
+2013-05-10 17:58:50 --- CRITICAL: ErrorException [ 8 ]: Undefined index: neo ~ APPPATH\classes\Controller\statistic.php [ 80 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:80
+2013-05-10 17:58:50 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(80): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\test2.r...', 80, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(12): Controller_Statistic->first(3)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:80
+2013-05-10 17:59:36 --- CRITICAL: ErrorException [ 8 ]: Undefined offset: 1 ~ APPPATH\classes\Controller\statistic.php [ 12 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:12
+2013-05-10 17:59:36 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(12): Kohana_Core::error_handler(8, 'Undefined offse...', 'Z:\home\test2.r...', 12, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#2 [internal function]: Kohana_Controller->execute()
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#6 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#7 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:12
+2013-05-10 17:59:42 --- CRITICAL: ErrorException [ 8 ]: Undefined offset: 1 ~ APPPATH\classes\Controller\statistic.php [ 12 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:12
+2013-05-10 17:59:42 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(12): Kohana_Core::error_handler(8, 'Undefined offse...', 'Z:\home\test2.r...', 12, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#2 [internal function]: Kohana_Controller->execute()
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#6 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#7 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:12
+2013-05-10 17:59:47 --- CRITICAL: ErrorException [ 8 ]: Undefined offset: 1 ~ APPPATH\classes\Controller\statistic.php [ 12 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:12
+2013-05-10 17:59:47 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(12): Kohana_Core::error_handler(8, 'Undefined offse...', 'Z:\home\test2.r...', 12, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#2 [internal function]: Kohana_Controller->execute()
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#6 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#7 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:12
+2013-05-10 18:00:22 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: fio ~ APPPATH\views\statistic.php [ 4 ] in Z:\home\test2.ru\www\application\views\statistic.php:4
+2013-05-10 18:00:22 --- DEBUG: #0 Z:\home\test2.ru\www\application\views\statistic.php(4): Kohana_Core::error_handler(8, 'Undefined varia...', 'Z:\home\test2.r...', 4, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\View.php(61): include('Z:\home\test2.r...')
+#2 Z:\home\test2.ru\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\test2.r...', Array)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\View.php(228): Kohana_View->render()
+#4 Z:\home\test2.ru\www\application\views\template.php(3): Kohana_View->__toString()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\View.php(61): include('Z:\home\test2.r...')
+#6 Z:\home\test2.ru\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\test2.r...', Array)
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#8 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(87): Kohana_Controller_Template->after()
+#9 [internal function]: Kohana_Controller->execute()
+#10 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#11 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#12 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#13 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#14 {main} in Z:\home\test2.ru\www\application\views\statistic.php:4
+2013-05-10 18:00:32 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: vop ~ APPPATH\classes\Controller\statistic.php [ 135 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:135
+2013-05-10 18:00:32 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(135): Kohana_Core::error_handler(8, 'Undefined varia...', 'Z:\home\test2.r...', 135, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(15): Controller_Statistic->other_q(6)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:135
+2013-05-10 18:01:13 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: vop ~ APPPATH\classes\Controller\statistic.php [ 136 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:136
+2013-05-10 18:01:13 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(136): Kohana_Core::error_handler(8, 'Undefined varia...', 'Z:\home\test2.r...', 136, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(16): Controller_Statistic->other_q(6)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:136
+2013-05-10 18:03:14 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: vop ~ APPPATH\classes\Controller\statistic.php [ 136 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:136
+2013-05-10 18:03:14 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(136): Kohana_Core::error_handler(8, 'Undefined varia...', 'Z:\home\test2.r...', 136, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(16): Controller_Statistic->other_q(6)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:136
+2013-05-10 18:03:17 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: vop ~ APPPATH\classes\Controller\statistic.php [ 136 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:136
+2013-05-10 18:03:17 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(136): Kohana_Core::error_handler(8, 'Undefined varia...', 'Z:\home\test2.r...', 136, Array)
+#1 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(16): Controller_Statistic->other_q(6)
+#2 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:136
+2013-05-10 18:04:04 --- CRITICAL: ErrorException [ 8 ]: Undefined offset: 3 ~ APPPATH\classes\Controller\statistic.php [ 16 ] in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:16
+2013-05-10 18:04:04 --- DEBUG: #0 Z:\home\test2.ru\www\application\classes\Controller\statistic.php(16): Kohana_Core::error_handler(8, 'Undefined offse...', 'Z:\home\test2.r...', 16, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(84): Controller_Statistic->action_index()
+#2 [internal function]: Kohana_Controller->execute()
+#3 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#4 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#6 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#7 {main} in Z:\home\test2.ru\www\application\classes\Controller\statistic.php:16
+2013-05-10 18:08:41 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: data ~ APPPATH\views\statistic.php [ 13 ] in Z:\home\test2.ru\www\application\views\statistic.php:13
+2013-05-10 18:08:41 --- DEBUG: #0 Z:\home\test2.ru\www\application\views\statistic.php(13): Kohana_Core::error_handler(8, 'Undefined varia...', 'Z:\home\test2.r...', 13, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\View.php(61): include('Z:\home\test2.r...')
+#2 Z:\home\test2.ru\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\test2.r...', Array)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\View.php(228): Kohana_View->render()
+#4 Z:\home\test2.ru\www\application\views\template.php(3): Kohana_View->__toString()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\View.php(61): include('Z:\home\test2.r...')
+#6 Z:\home\test2.ru\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\test2.r...', Array)
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#8 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(87): Kohana_Controller_Template->after()
+#9 [internal function]: Kohana_Controller->execute()
+#10 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#11 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#12 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#13 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#14 {main} in Z:\home\test2.ru\www\application\views\statistic.php:13
+2013-05-10 18:08:45 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: data ~ APPPATH\views\statistic.php [ 13 ] in Z:\home\test2.ru\www\application\views\statistic.php:13
+2013-05-10 18:08:45 --- DEBUG: #0 Z:\home\test2.ru\www\application\views\statistic.php(13): Kohana_Core::error_handler(8, 'Undefined varia...', 'Z:\home\test2.r...', 13, Array)
+#1 Z:\home\test2.ru\www\system\classes\Kohana\View.php(61): include('Z:\home\test2.r...')
+#2 Z:\home\test2.ru\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\test2.r...', Array)
+#3 Z:\home\test2.ru\www\system\classes\Kohana\View.php(228): Kohana_View->render()
+#4 Z:\home\test2.ru\www\application\views\template.php(3): Kohana_View->__toString()
+#5 Z:\home\test2.ru\www\system\classes\Kohana\View.php(61): include('Z:\home\test2.r...')
+#6 Z:\home\test2.ru\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\test2.r...', Array)
+#7 Z:\home\test2.ru\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#8 Z:\home\test2.ru\www\system\classes\Kohana\Controller.php(87): Kohana_Controller_Template->after()
+#9 [internal function]: Kohana_Controller->execute()
+#10 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Statistic))
+#11 Z:\home\test2.ru\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#12 Z:\home\test2.ru\www\system\classes\Kohana\Request.php(990): Kohana_Request_Client->execute(Object(Request))
+#13 Z:\home\test2.ru\www\index.php(118): Kohana_Request->execute()
+#14 {main} in Z:\home\test2.ru\www\application\views\statistic.php:13
